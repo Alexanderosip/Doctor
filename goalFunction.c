@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "math.h"
 #include <vector>
+#include "goalFunction.h"
 
 // TODO: Как правильно объявлять глобальные переменные??
 int NC; // Кол-во ресурсов
