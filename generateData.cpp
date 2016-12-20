@@ -6,6 +6,7 @@ using namespace std;
 #define NH 3 // кол-во физических компьютеров (Размер парка)
 #define NS 5 // кол-во логических серверов
 #define NC 5 // кол-во типов ресурсов
+void letsCheck(vector <vector <float> > Rik, vector <vector <float> > Qij, vector <float> Vi);
 
 int main ()
 {
@@ -13,57 +14,57 @@ int main ()
     vector < vector <float> > Rik; // Возможности физических компов по ресурсам
     vector <float> Vi; // Затраты на операционку
 
-    vector <float> string;
-    vector <float> column;
+    vector <float> row;
     float tmp = 0.0;
     // заполняем Q
     for (int i = 0; i < NC; ++i)
     {
-        for (int i = 0; i < NS; ++i)
+        for (int j = 0; j < NS; ++j)
         {
-            column.push_back(rand() % 200 + 800 + tmp);
+            row.push_back(rand() % 200 + 800 + tmp);
         }
         tmp += rand() % 300;
-        Qij.push_back(column);
-        column.clear();
+        Qij.push_back(row);
+        row.clear();
     }
     // заполняем R
     for (int i = 0; i < NC; ++i)
     {
-        for (int i = 0; i < NH; ++i)
+        for (int j = 0; j < NH; ++j)
         {
-            column.push_back(rand() % 300 + 2000 + tmp);
+            row.push_back(rand() % 300 + 2000 + tmp);
         }
         tmp += rand() % 1000;
-        Rik.push_back(column);
-        column.clear();
+        Rik.push_back(row);
+        row.clear();
     }
     letsCheck(Rik, Qij, Vi);
     return 0;
 }
-void letsCheck(vector <vector <float> > Rik, vector <vector <float> > Qij, vector <float> Vi);
 void letsCheck(vector <vector <float> > Rik, vector <vector <float> > Qij, vector <float> Vi)
 {
     // печатаем Q
+    printf("Это матрица логических серверов: \n");
     for (int i = 0; i < NC; ++i)
     {
-        for (int i = 0; i < NS; ++i)
+        for (int j = 0; j < NS; ++j)
         {
-            cout << Q[i][j] << " ";
-            // printf("%f ", Q[i][j]);
+            // cout << Qij[i][j] << " ";
+            printf("%f ", Qij[i][j]);
         }
-        cout << endl;
-        // printf("\n");
+        // cout << endl;
+        printf("\n\n");
     }
     // печатаем R
+    printf("Это матрица физических компов: \n");
     for (int i = 0; i < NC; ++i)
     {
-        for (int i = 0; i < NH; ++i)
+        for (int j = 0; j < NH; ++j)
         {
-            cout << R[i][j] << " ";
-            // printf("%f ", R[i][j]);
+            // cout << Rik[i][j] << " ";
+            printf("%f ", Rik[i][j]);
         }
-        cout << endl;
-        // printf("\n");
+        // cout << endl;
+        printf("\n\n");
     }
 }
