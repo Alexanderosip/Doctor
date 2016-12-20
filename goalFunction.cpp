@@ -1,3 +1,4 @@
+#include <iostream>
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
@@ -10,10 +11,10 @@ using namespace std;
 int NC; // Кол-во ресурсов
 int NX; // Кол-во ограничений на логические сервера
 
-int main void()
+int main()
 {
     int N;
-    Vector <float> b;
+    vector <float> b;
     N = sizeOf(J(T)); // Кол-во нераспределенных логических серверов на шаге T
     b = calculate_hardware_capacity(R, V, O);
     check_first_unequality(Qj, Xj, b);
@@ -26,9 +27,9 @@ int main void()
 
 // Рассчет емкости физического сервера k по всем приоритетным ресурсам Oi
 // bi = Rik - Vi
-Vector <float> calculate_hardware_capacity(const Vector <float> R, const Vector <float> V, const Vector <float> O)
+vector <float> calculate_hardware_capacity(const vector <float> R, const vector <float> V, const vector <float> O)
 {
-    Vector <float> b;
+    vector <float> b;
     for (int i = 0; i < NC; ++i)
     {
         if (R[i] > V[i])
@@ -49,7 +50,7 @@ Vector <float> calculate_hardware_capacity(const Vector <float> R, const Vector 
 
 // Проверка вместимости логики в физику
 // Sum(Qij *  Xj) <= bi
-Vector <float> check_first_unequality(Vector <float> Qj, Vector <float> Xj, Vector <float> b)
+vector <float> check_first_unequality(vector <float> Qj, vector <float> Xj, vector <float> b)
 {
     bool sucess;
     for (int i = 0; i < NC; ++i)
@@ -68,7 +69,7 @@ Vector <float> check_first_unequality(Vector <float> Qj, Vector <float> Xj, Vect
 }
 
 // Рассчет целевой функции
-float calculate_goal_function(Vector <int> X, Vector <float> b, Vector <float> coeff)
+float calculate_goal_function(vector <int> X, vector <float> b, vector <float> coeff)
 {
     float F = 0;
     for (int j = 0; j < N; ++j)
