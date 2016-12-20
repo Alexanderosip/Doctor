@@ -1,6 +1,6 @@
 #include <cstdio>
 #include <cstdlib>
-#include "cmath"
+#include <cmath>
 #include <vector>
 #include "goalFunction.h"
 
@@ -10,7 +10,6 @@ using namespace std;
 int NC; // Кол-во ресурсов
 int NX; // Кол-во ограничений на логические сервера
 
-
 int main void()
 {
     int N;
@@ -18,6 +17,11 @@ int main void()
     N = sizeOf(J(T)); // Кол-во нераспределенных логических серверов на шаге T
     b = calculate_hardware_capacity(R, V, O);
     check_first_unequality(Qj, Xj, b);
+    NH = sizeOf(NH)
+    for (int i = 0; i < sizeOf(NH); ++i)
+    {
+
+    }
 }
 
 // Рассчет емкости физического сервера k по всем приоритетным ресурсам Oi
