@@ -21,10 +21,10 @@ int main ()
     {
         for (int i = 0; i < NS; ++i)
         {
-            column.pushBack(rand() % 200 + 800 + tmp);
+            column.push_back(rand() % 200 + 800 + tmp);
         }
         tmp += rand() % 300;
-        Qij.pushBack(column);
+        Qij.push_back(column);
         column.clear();
     }
     // заполняем R
@@ -32,10 +32,10 @@ int main ()
     {
         for (int i = 0; i < NH; ++i)
         {
-            column.pushBack(rand() % 300 + 2000 + tmp);
+            column.push_back(rand() % 300 + 2000 + tmp);
         }
         tmp += rand() % 1000;
-        Rik.pushBack(column);
+        Rik.push_back(column);
         column.clear();
     }
     letsCheck(Rik, Qij, Vi);

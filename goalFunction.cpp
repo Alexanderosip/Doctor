@@ -34,7 +34,7 @@ vector <float> calculate_hardware_capacity(const vector <float> R, const vector 
     {
         if (R[i] > V[i])
         {
-            b.pushBack(R[i] - V[i]);
+            b.push_back(R[i] - V[i]);
         }
         else
         {
