@@ -1,8 +1,3 @@
-#include <iostream>
-#include <cstdio>
-#include <cstdlib>
-#include <cmath>
-#include <vector>
 #include "goalFunction.h"
 
 using namespace std;
@@ -17,16 +12,17 @@ int NX; // Кол-во ограничений на логические серв
 int main()
 {
     int N;
-    int T, R, V, O;
+    int T; // номер итерации
+    R, V, O;
     float b = 0;
 
     vector <float> b;
-    vector <float> J;
+    vector <int> J;
 
     N = sizeOf(J(T)); // Кол-во нераспределенных логических серверов на шаге T
     b = calculate_hardware_capacity(R, V, O);
     check_first_unequality(Qj, Xj, b);
-    NH = sizeOf(NH)
+    NH = sizeOf(NH);
     for (int i = 0; i < sizeOf(NH); ++i)
     {
 
@@ -35,7 +31,7 @@ int main()
 
 // Рассчет емкости физического сервера k по всем приоритетным ресурсам Oi
 // bi = Rik - Vi
-vector <float> calculate_hardware_capacity(const vector <float> R, const vector <float> V, const vector <float> O)
+vector <float> calculate_hardware_capacity(vector <float> R, vector <float> V, vector <float> O)
 {
     vector <float> b;
     for (int i = 0; i < NC; ++i)

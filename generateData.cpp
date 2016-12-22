@@ -8,7 +8,7 @@ using namespace std;
 #define NC 5 // кол-во типов ресурсов
 void letsCheck(vector <vector <float> > Rik, vector <vector <float> > Qij, vector <float> Vi);
 
-int main ()
+void generate()
 {
     vector < vector <float> > Qij; // Требования логических серверов по ресурсам
     vector < vector <float> > Rik; // Возможности физических компов по ресурсам
@@ -39,7 +39,6 @@ int main ()
         row.clear();
     }
     letsCheck(Rik, Qij, Vi);
-    return 0;
 }
 void letsCheck(vector <vector <float> > Rik, vector <vector <float> > Qij, vector <float> Vi)
 {
