@@ -53,8 +53,9 @@ void letsCheck(vector <vector <float> > Rik, vector <vector <float> > Qij, vecto
             printf("%.1f ", Qij[i][j]);
         }
         // cout << endl;
-        printf("\n\n");
+        printf("\n");
     }
+    printf("\n");
     // печатаем R
     printf("Это матрица физических компов: \n\n");
     for (int i = 0; i < NC; ++i)
@@ -65,6 +66,6 @@ void letsCheck(vector <vector <float> > Rik, vector <vector <float> > Qij, vecto
             printf("%.1f ", Rik[i][j]);
         }
         // cout << endl;
-        printf("\n\n");
+        printf("\n");
     }
 }
