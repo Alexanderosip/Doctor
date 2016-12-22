@@ -78,15 +78,30 @@ float calculate_goal_function(vector <int> X, vector <float> b, vector <float> c
     int N = 3;
     float F = 0;
     float comp = 0;
+    float prev1 = 0;
+    float pnalti;
+
     vector <int> c;
     vector <int> x;
+
     for (int j = 0; j < N; ++j)
     {
         comp += c[j]*x[j];
     }
-    for (int j = 0; j < N; ++j)
+    for (int i = 0; i < M; ++j)
     {
-        comp += c[j]*x[j];
+        for (int j = 0; j < N; ++j)
+        {
+            prev1 += a[i][j]*x[j];
+        }
+        prev1 = prev1 - b[i];
+        if (prev1 < 0) then
+        {
+            prev1 = 0;
+        } 
     }
+    prev1 = prev1 * penalti;
+
+    goal = comp - prev1;
     return F;
 }
