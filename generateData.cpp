@@ -44,25 +44,25 @@ int main ()
 void letsCheck(vector <vector <float> > Rik, vector <vector <float> > Qij, vector <float> Vi)
 {
     // печатаем Q
-    printf("Это матрица логических серверов: \n");
+    printf("Это матрица логических серверов: \n\n");
     for (int i = 0; i < NC; ++i)
     {
         for (int j = 0; j < NS; ++j)
         {
             // cout << Qij[i][j] << " ";
-            printf("%f ", Qij[i][j]);
+            printf("%.1f ", Qij[i][j]);
         }
         // cout << endl;
         printf("\n\n");
     }
     // печатаем R
-    printf("Это матрица физических компов: \n");
+    printf("Это матрица физических компов: \n\n");
     for (int i = 0; i < NC; ++i)
     {
         for (int j = 0; j < NH; ++j)
         {
             // cout << Rik[i][j] << " ";
-            printf("%f ", Rik[i][j]);
+            printf("%.1f ", Rik[i][j]);
         }
         // cout << endl;
         printf("\n\n");

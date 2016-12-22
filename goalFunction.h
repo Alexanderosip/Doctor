@@ -1,4 +1,6 @@
 
-Vector <float> calculate_hardware_capacity(const Vector <float> R, const Vector <float> V, const Vector <float> O);
-Vector <float> check_first_unequality(Vector <float> Qj, Vector <float> Xj, Vector <float> b);
-float calculate_goal_function(Vector <int> X, Vector <Float> b, Vector <float> coeff);
+#include <vector>
+
+vector <float> calculate_hardware_capacity(const vector <float> R, const vector <float> V, const vector <float> O);
+vector <float> check_first_unequality(vector <float> Qj, vector <float> Xj, vector <float> b);
+float calculate_goal_function(vector <int> X, vector <Float> b, vector <float> coeff);

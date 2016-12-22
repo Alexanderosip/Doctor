@@ -6,6 +6,9 @@
 #include "goalFunction.h"
 
 using namespace std;
+#define NH 3 // кол-во физических компьютеров (Размер парка)
+#define NS 5 // кол-во логических серверов
+#define NC 5 // кол-во типов ресурсов
 
 // TODO: Как правильно объявлять глобальные переменные??
 int NC; // Кол-во ресурсов
@@ -14,7 +17,12 @@ int NX; // Кол-во ограничений на логические серв
 int main()
 {
     int N;
+    int T, R, V, O;
+    float b = 0;
+
     vector <float> b;
+    vector <float> J;
+
     N = sizeOf(J(T)); // Кол-во нераспределенных логических серверов на шаге T
     b = calculate_hardware_capacity(R, V, O);
     check_first_unequality(Qj, Xj, b);
@@ -71,7 +79,11 @@ vector <float> check_first_unequality(vector <float> Qj, vector <float> Xj, vect
 // Рассчет целевой функции
 float calculate_goal_function(vector <int> X, vector <float> b, vector <float> coeff)
 {
+    int N = 3;
     float F = 0;
+    float comp = 0;
+    vector <int> c;
+    vector <int> x;
     for (int j = 0; j < N; ++j)
     {
         comp += c[j]*x[j];
