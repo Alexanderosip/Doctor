@@ -13,10 +13,11 @@ void generate()
     vector < vector <float> > Qij; // Требования логических серверов по ресурсам
     vector < vector <float> > Rik; // Возможности физических компов по ресурсам
     vector <float> Vi; // Затраты на операционку
+    vector <int> Oi; // Приоритетные ресурсы
 
     vector <float> row;
     float tmp = 0.0;
-    // заполняем Q
+    // заполняем Qij
     for (int i = 0; i < NC; ++i)
     {
         for (int j = 0; j < NS; ++j)
@@ -27,7 +28,7 @@ void generate()
         Qij.push_back(row);
         row.clear();
     }
-    // заполняем R
+    // заполняем Rik
     for (int i = 0; i < NC; ++i)
     {
         for (int j = 0; j < NH; ++j)
@@ -38,8 +39,20 @@ void generate()
         Rik.push_back(row);
         row.clear();
     }
+    // заполняем Vi
+    for (int i = 0; i < NC; ++i)
+    {
+        Vi.push_back(rand() % 100);
+    }
     letsCheck(Rik, Qij, Vi);
+    // заполняем Oi
+    for (int i = 0; i < NC; ++i)
+    {
+        Oi.push_back(rand() % 1);
+    }
+
 }
+
 void letsCheck(vector <vector <float> > Rik, vector <vector <float> > Qij, vector <float> Vi)
 {
     // печатаем Q
@@ -67,4 +80,23 @@ void letsCheck(vector <vector <float> > Rik, vector <vector <float> > Qij, vecto
         // cout << endl;
         printf("\n");
     }
+    printf("\n");
+
+    printf("Это вектор требований операционок физических компов: \n");
+    for (int i = 0; i < NC; ++i)
+    {
+        // cout << Vi[i] << " ";
+        printf("%1.f ", Vi[i]);
+    }
+    // cout << endl;
+    printf("\n");
+
+    printf("Это вектор приоритетных ресурсов физических компов: \n");
+    for (int i = 0; i < NC; ++i)
+    {
+        // cout << Oi[i] << " ";
+        printf("%1.f ", Oi[i]);
+    }
+    // cout << endl;
+    printf("\n");
 }

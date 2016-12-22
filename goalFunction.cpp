@@ -6,39 +6,41 @@ using namespace std;
 #define NC 5 // кол-во типов ресурсов
 
 // TODO: Как правильно объявлять глобальные переменные??
-int NC; // Кол-во ресурсов
-int NX; // Кол-во ограничений на логические сервера
+// int NC; // Кол-во ресурсов
+// int NX; // Кол-во ограничений на логические сервера
 
 int main()
 {
+    generate(); // генерируем данные
     int N;
-    int T; // номер итерации
-    R, V, O;
-    float b = 0;
 
+    vector <float> R;
     vector <float> b;
     vector <int> J;
 
-    N = sizeOf(J(T)); // Кол-во нераспределенных логических серверов на шаге T
-    b = calculate_hardware_capacity(R, V, O);
-    check_first_unequality(Qj, Xj, b);
-    NH = sizeOf(NH);
-    for (int i = 0; i < sizeOf(NH); ++i)
+    for (int i = 0; i < NH; ++i)
     {
+        N = sizeOf(J(i)); // Кол-во нераспределенных логических серверов на шаге i
+        R = Rik[i]; // Вытаскиваем конкретных физический комп
+        b = calculate_hardware_capacity(R, Vi, Oi); // Рассчитываем его емкость
 
+        for (int j = 0; j < NS; ++j)
+        {
+            check_first_unequality(Qij, Xj, b, N);
+        }
     }
 }
 
 // Рассчет емкости физического сервера k по всем приоритетным ресурсам Oi
 // bi = Rik - Vi
-vector <float> calculate_hardware_capacity(vector <float> R, vector <float> V, vector <float> O)
+vector <float> calculate_hardware_capacity(vector < vector <float> > R, vector <float> Vi, vector <float> Oi)
 {
     vector <float> b;
     for (int i = 0; i < NC; ++i)
     {
-        if (R[i] > V[i])
+        if (R[i] > Vi[i])
         {
-            b.push_back(R[i] - V[i]);
+            b.push_back(R[i] - Vi[i]);
         }
         else
         {
@@ -52,24 +54,24 @@ vector <float> calculate_hardware_capacity(vector <float> R, vector <float> V, v
     return b;
 }
 
-// Проверка вместимости логики в физику
+// Проверка вместимости ресурсов логических серверов в физический
 // Sum(Qij *  Xj) <= bi
-vector <float> check_first_unequality(vector <float> Qj, vector <float> Xj, vector <float> b)
+bool <float> check_first_unequality(vector < vector <float> > Qij, vector <float> Xj, vector <float> b, int N)
 {
-    bool sucess;
     for (int i = 0; i < NC; ++i)
     {
         tmp = 0;
         for (int j = 0; j < N; ++j)
         {
-            tmp += Qj[j]*X[j];
+            tmp += Qij[i][j]*X[j];
         }
         if (tmp > b[i])
         {
             printf("Не выполняется первого неравенства.\n Логические сервера требуют больше ресурсов, чем есть на физическом");
-            success = false;
+            return false;
         }
     }
+    return true;
 }
 
 // Рассчет целевой функции
