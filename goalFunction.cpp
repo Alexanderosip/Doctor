@@ -44,10 +44,9 @@ vector <float> calculate_hardware_capacity(vector < vector <float> > R, vector <
         }
         else
         {
-            if (O[i])
+            if (Oi[i])
             {
-                printf("Приоритетного ресурса не хватает даже для работы операционной системы на компьютере k")
-                return -1;
+                printf("Приоритетного ресурса не хватает даже для работы операционной системы на компьютере k");
             }
         }
     }
@@ -58,9 +57,10 @@ vector <float> calculate_hardware_capacity(vector < vector <float> > R, vector <
 // Sum(Qij *  Xj) <= bi
 bool <float> check_first_unequality(vector < vector <float> > Qij, vector <float> Xj, vector <float> b, int N)
 {
+    Float tmp;
     for (int i = 0; i < NC; ++i)
     {
-        tmp = 0;
+        tmp = 0.0;
         for (int j = 0; j < N; ++j)
         {
             tmp += Qij[i][j]*X[j];
@@ -100,7 +100,7 @@ float calculate_goal_function(vector <int> X, vector <float> b, vector <float> c
         if (prev1 < 0) then
         {
             prev1 = 0;
-        } 
+        }
     }
     prev1 = prev1 * penalti;
 
