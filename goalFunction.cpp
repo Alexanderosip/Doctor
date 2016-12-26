@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <cmath>
 #include <vector>
+#include <cstring>
 #include "goalFunction.h"
 
 using namespace std;
@@ -23,10 +24,17 @@ int main()
     vector <float> R;
     vector <float> b;
     vector <int> J(NS);
-    vector <int> Xj;
-    memset(Xj, '0', NH*NS);
-    puts(Xj);
-
+    vector < vector <int> > Xkj;
+    vector <int> comp;
+    for (int i = 0; i < NH; ++i)
+    {
+        for (int j = 0; j < NS; ++j)
+        {
+            comp.push_back(0);
+        }
+        Xkj.push_back(comp);
+        comp.clear();
+    }
     for (int i = 0; i < NH; ++i)
     {
         N = J.size(); // Кол-во нераспределенных логических серверов на шаге i
