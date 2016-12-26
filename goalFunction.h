@@ -2,13 +2,9 @@
 #ifndef _TEST_H_
 #define _TEST_H_
 
-#include <iostream>
-#include <cstdio>
-#include <cstdlib>
-#include <cmath>
 #include <vector>
 
-extern void generate(); // функция генерируем данные
+extern void generate(); // функция генерирует данные
 
 vector <float> calculate_hardware_capacity(vector <float> R, vector <float> Vi, vector <float> Oi);
 bool <float> check_first_unequality(vector < vector <float> > Qij, vector <float> Xj, vector <float> b, int N);
