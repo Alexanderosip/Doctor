@@ -7,15 +7,13 @@
 
 using namespace std;
 
-//Генерация значений для матриц
-void generate()
-{
-    vector < vector <float> > Rik; // Возможности физических компов по ресурсам
-    vector < vector <float> > Qij; // Требования логических серверов по ресурсам
-    vector < vector <float> > Edj; // Доп. ограничения
-    vector <float> Vi; // Затраты на операционку
-    vector <int> Oi; // Приоритетные ресурсы
+/*int main(){
+    generate();
+    return 0;
+}*/
 
+void generate(vector < vector <float> > Qij, vector < vector <float> > Rik, vector <float> Vi, vector <int> Oi)
+{
     vector <float> row;
     srand (time(NULL));
     float tmp = 0.0;

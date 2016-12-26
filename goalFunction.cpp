@@ -8,17 +8,20 @@
 using namespace std;
 
 // TODO: Как правильно объявлять глобальные переменные??
-// int NC; // Кол-во ресурсов
-// int NX; // Кол-во ограничений на логические сервера
 
 int main()
 {
-    generate(); // генерируем данные
+    vector < vector <float> > Qij; // Требования логических серверов по ресурсам
+    vector < vector <float> > Rik; // Возможности физических компов по ресурсам
+    vector <float> Vi; // Затраты на операционку
+    vector <int> Oi; // Приоритетные ресурсы
+
+    generate(Qij, Rik, Vi, Oi); // генерируем данные
     int N;
 
     vector <float> R;
     vector <float> b;
-    vector <int> J;
+    vector <int> J(NS);
 
     for (int i = 0; i < NH; ++i)
     {
@@ -35,7 +38,7 @@ int main()
 
 // Рассчет емкости физического сервера k по всем приоритетным ресурсам Oi
 // bi = Rik - Vi
-vector <float> calculate_hardware_capacity(vector < vector <float> > R, vector <float> Vi, vector <float> Oi)
+vector <float> calculate_hardware_capacity(vector < vector <float> > R, vector <float> Vi, vector <int> Oi)
 {
     vector <float> b;
     for (int i = 0; i < NC; ++i)
@@ -46,7 +49,7 @@ vector <float> calculate_hardware_capacity(vector < vector <float> > R, vector <
         }
         else
         {
-            if (Oi[i])
+            if (Oi[i] == 1)
             {
                 printf("Приоритетного ресурса не хватает даже для работы операционной системы на компьютере k");
             }
