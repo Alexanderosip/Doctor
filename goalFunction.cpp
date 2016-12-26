@@ -3,7 +3,6 @@
 #include <cstdlib>
 #include <cmath>
 #include <vector>
-#include <cstring>
 #include "goalFunction.h"
 
 using namespace std;
@@ -35,6 +34,7 @@ int main()
         Xkj.push_back(comp);
         comp.clear();
     }
+
     for (int i = 0; i < NH; ++i)
     {
         N = J.size(); // Кол-во нераспределенных логических серверов на шаге i
@@ -44,6 +44,7 @@ int main()
         for (int j = 0; j < NS; ++j)
         {
             check_first_unequality(Qij, Xj, b, N);
+
         }
     }
 }
