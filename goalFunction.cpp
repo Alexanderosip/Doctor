@@ -1,3 +1,8 @@
+#include <iostream>
+#include <cstdio>
+#include <cstdlib>
+#include <cmath>
+#include <vector>
 #include "goalFunction.h"
 
 using namespace std;
