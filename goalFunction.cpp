@@ -23,6 +23,9 @@ int main()
     vector <float> R;
     vector <float> b;
     vector <int> J(NS);
+    vector <int> Xj;
+    memset(Xj, '0', NH*NS);
+    puts(Xj);
 
     for (int i = 0; i < NH; ++i)
     {

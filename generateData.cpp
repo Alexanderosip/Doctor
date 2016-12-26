@@ -65,11 +65,11 @@ void generate(vector < vector <float> > Qij, vector < vector <float> > Rik, vect
     {
         Oi.push_back(rand() % 2);
     }
-
+    letsCheck(Qij, Rik, Edj, Vi, Oi);
 }
 
 //Вывод сгенерированных матриц и векторов на стандартный вывод
-void letsCheck(vector <vector <float> > Rik, vector <vector <float> > Qij, vector <float> Vi, vector <int> Oi)
+void letsCheck(vector <vector <float> > Qij,vector <vector <float> > Rik, vector <vector <float> > Edj, vector <float> Vi, vector <int> Oi)
 {
     // печатаем R
     printf("Это матрица физических компов: \n\n");
@@ -105,8 +105,8 @@ void letsCheck(vector <vector <float> > Rik, vector <vector <float> > Qij, vecto
     {
         for (int j = 0; j < NS; ++j)
         {
-            // cout << Qij[i][j] << " ";
-            printf("%.1f ", Qij[i][j]);
+            // cout << Edj[i][j] << " ";
+            printf("%.1f ", Edj[i][j]);
         }
         // cout << endl;
         printf("\n");
