@@ -13,6 +13,7 @@ int main()
 {
     vector < vector <float> > Qij; // Требования логических серверов по ресурсам
     vector < vector <float> > Rik; // Возможности физических компов по ресурсам
+    vector < vector <float> > Edj; // ограничения на логические сервера
     vector <float> Vi; // Затраты на операционку
     vector <int> Oi; // Приоритетные ресурсы
 

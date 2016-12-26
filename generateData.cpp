@@ -12,7 +12,7 @@ using namespace std;
     return 0;
 }*/
 
-void generate(vector < vector <float> > Qij, vector < vector <float> > Rik, vector <float> Vi, vector <int> Oi)
+void generate(vector < vector <float> > Qij, vector < vector <float> > Rik, vector < vector <float> > Edj, vector <float> Vi, vector <int> Oi)
 {
     vector <float> row;
     srand (time(NULL));
@@ -42,7 +42,7 @@ void generate(vector < vector <float> > Qij, vector < vector <float> > Rik, vect
         row.clear();
     }
 
-    // заполняем матрицу Eij
+    // заполняем матрицу Edj
     for (int i = 0; i < NX; ++i)
     {
         for (int j = 0; j < NS; ++j)
