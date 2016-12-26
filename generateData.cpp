@@ -5,11 +5,11 @@
 
 #include "goalFunction.h"
 
-using namespace std;
-
 #define NH 3 // кол-во физических компьютеров (Размер парка)
 #define NS 5 // кол-во логических серверов
 #define NC 5 // кол-во типов ресурсов
+
+using namespace std;
 
 /*int main(){
     generate();
