@@ -17,7 +17,7 @@ int main()
     vector <float> Vi; // Затраты на операционку
     vector <int> Oi; // Приоритетные ресурсы
 
-    generate(Qij, Rik, Vi, Oi); // генерируем данные
+    generate(Qij, Rik, Edj, Vi, Oi); // генерируем данные
     int N;
 
     vector <float> R;
