@@ -5,10 +5,11 @@
 #include <vector>
 #include "goalFunction.h"
 
-using namespace std;
 #define NH 3 // кол-во физических компьютеров (Размер парка)
 #define NS 5 // кол-во логических серверов
 #define NC 5 // кол-во типов ресурсов
+
+using namespace std;
 
 // TODO: Как правильно объявлять глобальные переменные??
 // int NC; // Кол-во ресурсов
@@ -25,7 +26,7 @@ int main()
 
     for (int i = 0; i < NH; ++i)
     {
-        N = sizeOf(J(i)); // Кол-во нераспределенных логических серверов на шаге i
+        N = J.size(); // Кол-во нераспределенных логических серверов на шаге i
         R = Rik[i]; // Вытаскиваем конкретных физический комп
         b = calculate_hardware_capacity(R, Vi, Oi); // Рассчитываем его емкость
 
@@ -60,7 +61,7 @@ vector <float> calculate_hardware_capacity(vector < vector <float> > R, vector <
 
 // Проверка вместимости ресурсов логических серверов в физический
 // Sum(Qij *  Xj) <= bi
-bool <float> check_first_unequality(vector < vector <float> > Qij, vector <float> Xj, vector <float> b, int N)
+bool check_first_unequality(vector < vector <float> > Qij, vector <float> Xj, vector <float> b, int N)
 {
     Float tmp;
     for (int i = 0; i < NC; ++i)
