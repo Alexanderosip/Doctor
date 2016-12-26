@@ -5,10 +5,6 @@
 #include <vector>
 #include "goalFunction.h"
 
-#define NH 3 // кол-во физических компьютеров (Размер парка)
-#define NS 5 // кол-во логических серверов
-#define NC 5 // кол-во типов ресурсов
-
 using namespace std;
 
 // TODO: Как правильно объявлять глобальные переменные??

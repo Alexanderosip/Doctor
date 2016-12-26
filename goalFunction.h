@@ -3,6 +3,12 @@
 
 #include <vector>
 using namespace std;
+
+#define NH 4 // кол-во физических компьютеров (Размер парка)
+#define NS 6 // кол-во логических серверов
+#define NC 5 // кол-во типов ресурсов
+#define NX 3 // кол-во доп. ограничений
+
 void generate(); // функция генерирует данные
 void letsCheck( vector <vector <float> > Rik, vector <vector <float> > Qij, vector <float> Vi, vector <int> Oi);
 
